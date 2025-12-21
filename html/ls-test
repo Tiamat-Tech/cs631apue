@@ -20,6 +20,8 @@ COMMANDS="./ls
 ./ls ~/testdir/d
 ./ls -l ~/testdir/d
 ./ls -la ~/testdir/d
+./ls /tmp/a.out /netbsd /etc/passwd
+./ls -lis /
 BLOCKSIZE=bacon ./ls -ls
 BLOCKSIZE=0 ./ls -ls
 BLOCKSIZE=2048 ./ls -ls

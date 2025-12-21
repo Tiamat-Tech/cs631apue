@@ -41,7 +41,7 @@
 #include <unistd.h>
 
 #ifndef USER
-#define USER "jschauma"
+#define USER "nobody"
 #endif
 
 static void

@@ -1,8 +1,8 @@
 .\" Programming assignment of:
 .\"   CS631 Advanced Programming in the UNIX Environment
-.\"   https://www.cs.stevens.edu/~jschauma/631/
+.\"   https://stevens.netmeister.org/631/
 .\"
-.Dd December 19, 2024
+.Dd December 16, 2025
 .Dt SISH 1
 .Os
 .Sh NAME
@@ -78,10 +78,11 @@ standard input of the next command.
 The standard output of the last command is, absent any redirection
 operators, the controlling terminal.
 .Ss Background Commands -- \*[Am]
-If a command is terminated by the control operator ampersand (\*[Am]), the
-shell executes the command asynchronously -- that is, the shell does not
-wait for the command to finish before prompting the user for the next
-command.
+If a command or pipeline is terminated by the control
+operator ampersand (\*[Am]), the shell executes the
+command asynchronously -- that is, the shell does not
+wait for the command to finish before prompting the
+user for the next command.
 .Pp
 .Nm
 will print the process ID of the backgrounded job in
@@ -104,25 +105,40 @@ as determined via
 .Xr getpwuid 3 .
 .It echo Op Ar word Ar ...
 Print the given word(s), followed by a '\\n'.
-If
-.Ar word
-begins with a '$', then the value of the environment
-variable identified by
-.Ar word
-is printed instead of
-.Ar word
-itself.
+All words are subject to
+.Sx Variable Expansion .
+.It exit
+Exit the current shell.
+.El
+.Ss Variable Expansion
+Prior to executing any commands or builtin,
+.Nm
+performs variable expansion on the list of tokens
+whereby any word that begins with a '$' is replaced
+with the value of the environment variable identified
+by that word.
 .Pp
 The following special values are supported:
 .Bl -tag -width __
+.It $!
+The process ID of the most recent background process.
 .It $?
 The exit status of the last command.
 .It $$
 The current process ID.
 .El
-.It exit
-Exit the current shell.
-.El
+.\" .Ss Tilde Expansion
+.\" Any word beginning with an unquoted tilde
+.\" character (~) is subjected to tilde expansion.
+.\" All subsequent characters in the word up to a
+.\" slash (/) are treated as a user name and are
+.\" replaced with the pathname of the named user's home
+.\" directory.
+.\" If the user name is missing (as in
+.\" .Pa ~/foobar ) ,
+.\" the tilde is replaced with the value of the
+.\" .Dv HOME
+.\" variable (the current user's home directory).
 .Ss Command Execution
 If a sequence of words does not begin with a builtin,
 .Nm
@@ -153,6 +169,8 @@ sish$ echo $$
 6465
 sish$ echo $SHELL
 /usr/local/bin/sish
+sish$ ls -l $SHELL
+-rwxr-xr-x  1 jschauma  wheel  15448 Nov 11 07:37 /usr/local/bin/sish
 sish$ ls
 file1   file2
 sish$ ls | wc -l
@@ -178,6 +196,11 @@ sish$ rm /etc/passwd
 rm: /etc/passwd: Permission denied
 sish$ echo $?
 1
+.\" sish$ cd ~jdoe
+.\" sish$ pwd
+.\" /export/homes/jdoe
+.\" sish$ ls -ld ~
+.\" drwxr-xr-x  59 jschauma  users  4096 Dec 15 22:04 /home/jschauma
 sish$ exit
 $ sish -c date
 Sat Nov 29 21:18:07 EST 2014

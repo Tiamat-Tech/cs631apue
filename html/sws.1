@@ -1,4 +1,4 @@
-.Dd November 12, 2021
+.Dd November 22, 2025
 .Dt SWS 1
 .Os
 .Sh NAME
@@ -58,6 +58,9 @@ speaks a crippled dialect of HTTP/1.0:
 it responds to GET and HEAD requests according to RFC1945, and only
 supports the If-Modified-Since Request-Header.
 .Pp
+In addition, it allows HTTP/1.1 requests to be made,
+but quietly downgrades the communications to HTTP/1.0.
+.Pp
 When a connection is made,
 .Nm
 will respond with the appropriate HTTP/1.0 status code and the following
@@ -96,11 +99,28 @@ will generate a directory index, listing the contents of the directory in
 alphanumeric order.
 Files starting with a "." are ignored.
 .It User Directories
-If the request begins with a "/~", then the following string up to the next
-slash is translated into that user's
-.Nm
-directory (e.g.,
-.Ar /home/<user>/sws/ Ns ).
+If the request begins with a "/~", then the following
+string up to the next slash is interpreted as a
+username.
+The following string is then treated as a pathname
+relative to the directory name
+.Ar public_html
+under that user's home directory (e.g.,
+.Ar /home/<user>/public_html/ Ns ).
+.Pp
+So a request like, e.g.,
+.Bd -literal -offset indent
+GET /~jdoe/dir/file.html HTTP/1.0
+.Ed
+.Pp
+would be -- assuming the user
+.Ar jdoe
+exists on the system and has a home directory of
+.Ar /home/jdoe
+-- resolved as follows:
+.Bd -literal -offset indent
+/home/jdoe/public_html/dir/file.html
+.Ed
 .El
 .Sh CGIs
 If a URI begins with the string "/cgi-bin", and the

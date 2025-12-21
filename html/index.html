@@ -35,8 +35,9 @@
         programs before, and to be able to competently use a Unix 
         system with a command-line shell interface.
         <em>All coursework will be done exclusively on a Unix system
-        from the command-line.  All programming is done in C.</em>  This is <em>not</em> an
-        introduction to using Unix nor to programming in C!</b></P>
+        from the command-line.  All programming is done in C.</em>
+        This is <em>not</em> an introduction to using Unix nor to
+        programming in C!</b></P>
 
         <P>If you email me to waive the prerequisites, please provide
         information about how you meet the requirements listed above in
@@ -73,9 +74,11 @@
           <em>Note: all class communications happen via this mailing
 list.</em><br>
           All registered students will be subscribed to this list using their
-          <code>@stevens.edu</code> address at the beginning of the semester.  It is critical that you read this list.</li>
+          <code>@stevens.edu</code> address at the beginning of the semester.
+          It is critical that you read this list.</li>
           <li><a href="https://cs631apue2025.slack.com">Course Slack</a></li>
-          <li><a href="https://youtube.com/c/cs631apue">Course Videos / Youtube Channel</a> (<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC7-CyoYfsrVI-dsuHRQx0IQ">RSS feed</a>)</li>
+          <li><a href="https://youtube.com/c/cs631apue">Course Videos / Youtube Channel</a>
+             (<a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC7-CyoYfsrVI-dsuHRQx0IQ">RSS feed</a>)</li>
         </ul>
 
         <p>Assignments and meta-information:</p>
@@ -166,7 +169,7 @@ material on GitHub</a></li>
           Publisher: Addison Wesley Professional<BR>
           <A href=
           "http://www.apuebook.com/code3e.html">Code
-          Examples</A> | <a href="http://proquest.safaribooksonline.com/book/programming/unix/9780321638014">Safari Online version</a><BR></LI>
+          Examples</A> | <a href="https://learning.oreilly.com/library/view/advanced-programming-in/9780321638014/">Online version</a><BR></LI>
         </UL>
 
         <p>
@@ -207,18 +210,12 @@ material on GitHub</a></li>
         href="https://www.netbsd.org">NetBSD</a> system.  It is
         your responsibility to gain access to such a system <b>prior
         to the start of the class</b>.  Please see <a href="netbsd.html">this
-        page</a> for more information. Here are instructions on how to install NetBSD in a <a href="virtualbox/">VirtualBox</a> or <a href="utm/">UTM</a>.</p>
-        <p>
+        page</a> for more information. Here are instructions on how to
+        install NetBSD in a <a href="virtualbox/">VirtualBox</a> or
+        <a href="utm/">UTM</a>.</p>
         <p>All grading will be done on a NetBSD &gt;= 10.0 system.  While you may
         choose to develop on your own personal host, you should make sure
         that your code compiles and runs flawlessly on this OS version.</p>
-
-        <!-- <p>
-        You may also find it useful to
-get yourself an account on the
-<a href="linux-lab.html">Stevens linux-lab systems</a>
-to be able to compare another system.
-        </p> -->
 
         <hr>
         <H3 id="grading">Grading:</H3>There will most likely be:
@@ -267,8 +264,7 @@ href="https://www.netmeister.org/blog/plagiarism.html">plagiarism</a>, may imply
         </blockquote>
         Any incidents are reported to the Dean of Graduate
         Academics, as per the <a
-href="https://my.stevens.edu/system/files/graduate_student_code_of_academic_integrity_0.pdf">Graduate
-Student Code of Academic Conduct</a>.
+href="https://assets.stevens.edu/mviowpldu823/2OPzyEojDAg080ca2LDTih/87f4e49e9a23c465d57eeb128a434711/graduate_student_code_of_academic_integrity_0.pdf">Graduate Student Code of Academic Integrity</a>.
         <p>
         <em>Note</em>: unless <em>explicitly</em> noted in the assignemnt,
         you may <em>not</em> use AI for course work in
@@ -386,7 +382,7 @@ Student Code of Academic Conduct</a>.
             &#160;<BR>
               <A href="apue-code/02/argv.c">argv.c</A><BR>
               <A href="apue-code/02/close-stderr.c">close-stderr.c</A><BR>
-              <A href="apue-code/02/fds.c">fds.c</A><BR>
+              <!-- <A href="apue-code/02/fds.c">fds.c</A><BR> -->
               <A href="apue-code/02/hole.c">hole.c</A><BR>
               <A href="apue-code/02/lseek.c">lseek.c</A><BR>
               <A href="apue-code/02/openat.c">openat.c</A><BR>
@@ -402,6 +398,11 @@ Student Code of Academic Conduct</a>.
 
           <TR>
             <TD>2025-09-22</TD>
+            <TD colspan="3"><em>No class</em></TD>
+          </TR>
+
+          <TR>
+            <TD>2025-09-29</TD>
             <TD>Files and Directories</TD>
             <TD>Stevens: Chapter 4</TD>
 
@@ -435,17 +436,16 @@ Student Code of Academic Conduct</a>.
               <A href="apue-code/01/simple-ls.c">simple-ls.c</A><BR>
               <A href="apue-code/03/simple-ls-stat.c">simple-ls-stat.c</A><BR>
               <A href="apue-code/03/umask.c">umask.c</A><BR><br>
-              <a href="/cgi-bin/633-03.cgi">Week 03 Checkpoint</a>  (due by 16:00 Eastern before class)<br>
+              <a href="/cgi-bin/631-03.cgi">Week 03 Checkpoint</a>  (due by 16:00 Eastern before class)<br>
               <a href="f25-hw2.html">HW#2: use AI to write <code>stat -F</code></a><br>
               <a href="f25-midterm.html">Midterm Project Assignment</a></TD>
           </TR>
 
           <TR>
-            <TD>2025-09-29</TD>
+            <TD>2025-10-06</TD>
             <TD>Filesystems, System Data Files, Time &amp; Date</TD>
             <TD>Stevens: Chapter 4, 6<br>
-              <a
-href="https://www.netmeister.org/book/04-file-systems.pdf">File Systems and Storage Models</a>: 4.4.1, 4.5 - 4.7</TD>
+              <a href="https://www.netmeister.org/book/04-file-systems.pdf">File Systems and Storage Models</a>: 4.4.1, 4.5 - 4.7</TD>
 
             <TD style="white-space:nowrap;">
               <b>Week 04, Segment 1: The Unix Filesystem</b><br>
@@ -486,17 +486,23 @@ href="https://www.netmeister.org/book/04-file-systems.pdf">File Systems and Stor
           </TR>
 
           <TR>
-            <TD>2025-10-06</TD>
+            <TD>2025-10-13</TD>
+            <TD colspan="3"><em>Fall Recess</em></TD>
+          </TR>
+
+          <TR>
+            <TD>2025-10-14</TD>
             <TD>UNIX tools: cc(1), make(1), revision control, diff(1), patch(1), gdb(1)</TD>
             <TD><A href=
             "https://www.gnu.org/software/trans-coord/manual/cvs/cvs.html">
             CVS Documentation</A><br>
-                <a href="https://dev.gentoo.org/~vapier/crt.txt">Mini FAQ about the misc libc/gcc crt files</a><br>
-          <A href="http://sourceware.org/gdb/current/onlinedocs/gdb/">Debugging with GDB</A><BR>
+            <a href="https://dev.gentoo.org/~vapier/crt.txt">Mini FAQ about the misc libc/gcc crt files</a><br>
+            <A href="http://sourceware.org/gdb/current/onlinedocs/gdb/">Debugging with GDB</A><BR>
             <A href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html">Guide to Faster, Less Frustrating Debugging</A><BR>
             <A href="http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html">gdb Tutorial</A><br>
             <a href="http://git-scm.com/">Git</a></TD>
             <TD>
+              <em>Note: Tuesday Class</em><br><br>
               <b>Week 05, Segment 1: The Unix Development Environment</b><br>
               [<a href="05-tools.pdf">slides</a>]&nbsp;[<a href="https://youtu.be/QYwYLR3UD2w">video lecture</a>]&nbsp;[<a href="05-tools.txt">transcript</a>]<br>
             &#160;<BR>
@@ -543,22 +549,17 @@ href="https://www.netmeister.org/book/04-file-systems.pdf">File Systems and Stor
           </TR>
 
           <TR>
-            <TD>2025-10-13</TD>
-            <TD colspan="3"><em>Fall Recess</em></TD>
-          </TR>
-
-          <TR>
-            <TD>2025-10-14</TD>
+            <TD>2025-10-20</TD>
             <TD>Process Environment, Process Control</TD>
             <TD>
-              <em>Note: Tuesday Class</em><br><br>
               Stevens: Chapters 7, 8<br>
-                <a
-href="https://insecure.org/stf/smashstack.html">Smashing The Stack For Fun And Profit</a><br>
-                <a
-href="http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html">Linux x86 Program Start Up</a><br>
+                <a href="https://insecure.org/stf/smashstack.html">Smashing The Stack For Fun And Profit</a><br>
+                <a href="http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html">Linux x86 Program Start Up</a><br>
                 <a href="https://www.netmeister.org/blog/stdarg.html"><code>stdarg</code> And The Case Of The Forgotten Registers</a><br>
                 <a href="https://www.netmeister.org/blog/return-printf.html">There is no 'printf'.</a><br>
+                <a href="https://www.netmeister.org/blog/stack-vars.html">Uninitialized Stack Variables</a><br>
+                <a href="https://www.netmeister.org/blog/thread-stacks.html">Stacking Threads</a><br>
+                <a href="https://www.netmeister.org/blog/process-memory.html">Process Memory Sharing</a><br>
                 <a href="https://man7.org/tlpi/download/TLPI-24-Process_Creation.pdf">Process Creation</a></TD>
 
             <TD style="white-space:nowrap;">
@@ -581,7 +582,7 @@ href="http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html">Li
               [<a href="06-process-control.pdf">slides</a>]&nbsp;[<a href="https://youtu.be/KJq5nTCFsIg">video lecture</a>]&nbsp;[<a href="06-process-control.txt">transcript</a>]<br>
             &#160;<BR>
             &#160;<BR>
-              <A href="apue-code/06/const.c">const.c</A><BR>
+              <A href="apue-code/12/const.c">const.c</A><BR>
               <A href="apue-code/06/entry.c">entry.c</A><BR>
               <A href="apue-code/06/exit-handlers.c">exit-handlers.c</A><BR>
               <A href="apue-code/06/forkflush.c">forkflush.c</A><BR>
@@ -609,15 +610,14 @@ href="http://cvsweb.netbsd.org/bsdweb.cgi/src/lib/csu/common/crt0-common.c?rev=H
 
           <TR>
 
-            <TD>2025-10-20</TD>
+            <TD>2025-10-27</TD>
             <TD>Process Groups, Sessions, Signals</TD>
             <TD>Stevens: Chapter 9, 10<br>
-                <a
-href="https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap11.html">POSIX
-Terminal Interface Description</a><br>
+                <a href="https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap11.html">POSIX
+                  Terminal Interface Description</a><br>
                 <a href="https://notes.shichao.io/apue/ch9/">Shichao's Notes</a><br>
-                <a
-href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD Process Management</a> (from "The Design and Implementation of the FreeBSD Operating System")<br>
+                <a href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD Process Management</a>
+                (from "The Design and Implementation of the FreeBSD Operating System")<br>
                 <a href="https://lcamtuf.coredump.cx/signals.txt">Delivering Signals for Fun and Profit</a></td>
 
             <TD style="width: 25%">
@@ -650,7 +650,7 @@ href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD P
           </TR>
 
           <TR>
-            <TD>2025-10-27</TD>
+            <TD>2025-11-03</TD>
             <TD>Interprocess Communication I</TD>
             <TD>Stevens: Chapter 15<br>
                 <A href="https://web.archive.org/web/20160507131726/http://www.kohala.com/start/unpv22e/unpv22e.chap12.pdf">Shared Memory Introduction</A><BR>
@@ -689,7 +689,7 @@ href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD P
           </TR>
 
           <TR>
-            <TD>2025-11-03</TD>
+            <TD>2025-11-10</TD>
             <TD>Interprocess Communication II</TD>
             <TD>Stevens: Chapter 16 / 17<br>
                 <A href="ipc.pdf">BSD IPC</A><BR>
@@ -735,10 +735,12 @@ href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD P
           </TR>
 
           <TR>
-            <TD>2025-11-10</TD>
+            <TD>2025-11-17</TD>
 
-            <TD id="daemon">D&aelig;mon Processes, HTTP / Group Project Discussions</TD>
-<!-- Code Reading / HTTP Server Implementations</TD>
+            <TD id="daemon">D&aelig;mon Processes, HTTP<br>
+              Group Project Discussions<br>
+              Shared Libraries</TD>
+            <!-- Code Reading / HTTP Server Implementations</TD>
             <TD><a href="http://www.eterna23.net/bozohttpd/">bozohottpd</a><br>
                 <a href="http://www.acme.com/software/mini_httpd/">mini_httpd</a><br><br>
                 <a href="https://httpd.apache.org/download.cgi">apache</a><br>
@@ -749,31 +751,23 @@ href="http://www.informit.com/articles/article.aspx?p=366888&seqNum=7">FreeBSD P
                 <a href="http://inglorion.net/software/muhttpd/">muhttpd</a><br>
                 Too tiny indeed: <a href="http://tinyhttpd.sourceforge.net/">tinyhttpd</a><br> -->
                 <TD>
-                Stevens: Chapter 13<br>
-                </TD>
-
-            <TD>
-              <b>Week 10, Segment 1: D&aelig;mon Processes</b><br>
-              [<a href="10-daemons.pdf">slides</a>]&nbsp;[<a href="https://youtu.be/YbYQqVMv7b8">video lecture</a>]&nbsp;[<a href="10-daemons.txt">transcript</a>]<br>
-            &#160;<BR>
-              <a href="10-http.pdf">HTTP Slides</a></TD>
-          </TR> 
-
-          <TR>
-            <TD>2025-11-17</TD>
-            <TD>Shared Libraries</TD>
-
-            <TD>
-                <a
-href="http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/">How to read an Executable</a><br>
+                Stevens: Chapter 13<br><br>
+                <a href="http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/">How to read an Executable</a><br>
                 <a href="https://lwn.net/Articles/276782/">Ian Lance Taylor's blog post series on linkers</a><br>
                 <a href="https://web.archive.org/web/20150320212734/http://www.iecc.com/linker/">Linkers and Loaders</a><br>
                 <a href="https://www.akkadia.org/drepper/dsohowto.pdf">How To Write Shared Libraries</a><br>
                 <a href="https://refspecs.linuxbase.org/elf/elf.pdf">Tool Interface Standard (TIS) ELF Specification</a><br>
                 <a href="https://sourceware.org/glibc/wiki/GNU_IFUNC">GNU indirect function support (IFUNC)</a><br>
                 <a href="elf.html">The Executable and Linkable Format (ELF)</a></TD>
+                </TD>
 
-            <TD style="width: 25%" id="elf"><b>Week 11, Segment 1: The Executable and Linkable Format</b><br>
+            <TD>
+              <b>Week 10, Segment 1: D&aelig;mon Processes</b><br>
+              [<a href="10-daemons.pdf">slides</a>]&nbsp;[<a href="https://youtu.be/YbYQqVMv7b8">video lecture</a>]&nbsp;[<a href="10-daemons.txt">transcript</a>]<br>
+            &#160;<BR>
+              <a href="10-http.pdf">HTTP Slides</a><br><br>
+            <b>Week 11, Segment 1: The Executable and Linkable Format</b><br>
+
               [<a href="11-elf.pdf">slides</a>]&nbsp;[<a href="https://youtu.be/i1UDF05iZPU">video lecture</a>]&nbsp;[<a href="11-elf.txt">transcript</a>]<br>
             &#160;<BR>
               <b>Week 11, Segment 2: Of Linkers and Loaders</b><br>
@@ -797,7 +791,7 @@ href="http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/">How to read an 
               <a href="libgreet-exercise.html">libgreet exercise</a></td>
           </TR>
           <TR>
-            <TD>2025-11-25</TD>
+            <TD>2025-11-24</TD>
             <TD>Advanced I/O: Nonblocking I/O, Polling, and Record
             Locking / Encryption in a Nutshell</TD>
             <TD>Stevens: Chapter 14</TD>
@@ -816,12 +810,15 @@ href="http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/">How to read an 
             &#160;<BR>
 
               <BR>
-              <a href="lecture12.pdf">Lecture Slides</a> (previous semester, includes section on encryption basics)
+              <a href="12-cryptobasics.pdf">Cryptographic Basics</a> lecture slides
               <BR>
               <BR>
               <A href="apue-code/12/slogdemo.c">slogdemo.c</A><br>
               <A href="apue-code/12/nonblock.c">nonblock.c</A><br>
               <A href="apue-code/12/flock.c">flock.c</A><br>
+              <A href="apue-code/12/getpass.c">getpass.c</A><br>
+              <A href="apue-code/12/pwhash.c">pwhash.c</A><br>
+              <A href="apue-code/12/prng.c">prng.c</A><br>
               <A href="https://www.netmeister.org/blog/strlcat.html">Use <code>strlcat(3)</code>!</A><br><br>
               <a href="/cgi-bin/631-12.cgi">Week 12 Checkpoint</a> (due by 16:00 Eastern before class)<br>
             <!-- <a href="f16-hw4.html">HW4</a> -->
@@ -833,9 +830,7 @@ href="http://jvns.ca/blog/2014/09/06/how-to-read-an-executable/">How to read an 
             <TD>Restricting processes / Containers</TD>
             <TD>
                 <a href="https://www.netmeister.org/blog/restricting-processes.html">Course Notes</a><br>
-                <a
-href="https://www.netbsd.org/~rmind/pub/netbsd_5_scheduling_apis.pdf">Thread
-scheduling and related interfaces in NetBSD 5.0</a><br>
+                <a href="https://www.netbsd.org/~rmind/pub/netbsd_5_scheduling_apis.pdf">Thread scheduling and related interfaces in NetBSD 5.0</a><br>
                 <a href="https://www.netmeister.org/blog/cpu-pinning-and-sets.html">CPU Pinning and CPU Sets</a></TD>
             <TD>
               <b>Week 13, Segment 1: POSIX ACLs</b><br>
@@ -871,7 +866,7 @@ scheduling and related interfaces in NetBSD 5.0</a><br>
             <TD>&nbsp;</TD>
             <TD><!-- <A
 href="https://create.kahoot.it/share/cs631-advanced-programming-in-the-unix-environment/d5280f84-bd71-4efe-85e8-0f2d22d86086">Review Kahoot</a><br><br> -->
-                <a href="lecture14.pdf">Review Slides</a><br><br>
+                <a href="f25.pdf">Review Slides</a><br><br>
                 <a href="f25-sish.html">Final Assignment: sish(1)</a><br><br>
                 <a href="/cgi-bin/631-review.cgi">Week 14 Checkpoint</a>  (due by 16:00 Eastern before class)<br></TD>
           </TR>

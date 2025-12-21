@@ -95,6 +95,40 @@
         Section 3.2.1</a>); does not need to handle RFC1738 percent-encoded URIs;
         does not need to validate URIs against reserved character use.
 	</p>
+        <p>
+        While your server speaks HTTP/1.0, it should <em>accept</em> HTTP/1.1
+        requests and simply answer them as if they were HTTP/1.0 requests.
+        This allows you to use a normal browser to access your server.
+	</p>
+	<h5>Supported Systems</H5>
+        <p>
+        As usual, your code must compile and run on our standard reference
+        platform, NetBSD 10.x.
+        </p>
+        <p>
+        In addition, your code must <em>also</em> compile and run on these two
+        systems:
+        </p>
+        <ul>
+          <li><code>linux.cs631.dotwtf.wtf</code> # SSH host key fingerprints are:
+            <ul>
+              <li><code>SHA256:H7StG3NkV4KM3VgFu6D52KvPZSQuOpBqZHWfNITp2qw</code></li>
+              <li><code>SHA256:gJp2GfrUOzXsACwgv8gqc+TclUGFJp272q5x5arQ6Z4</code></li>
+              <li><code>SHA256:hzSsTKR/LqnZyO8GNC9XvwHl11x1OJb8zBPXGjORtog</code></li>
+            </ul>
+          </li>
+          <li><code>omnios.cs631.dotwtf.wtf</code> # SSH host key fingerprints are:
+            <ul>
+              <li><code>SHA256:rhmn5RgISE2wfCeoCHVIptTP73nhZRYgWxz+9xlA+7k</code></li>
+              <li><code>SHA256:mSrbAcHpz9qPbVEcFhGT0qQ749MTru0GnPHQXw/7iWg</code></li>
+              <li><code>SHA256:gDE9kckofygttcskxHpXO7K74+povSOGkIbmCvLW37E</code></li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+        To get access to these systems, please send a public SSH key ťo <a
+        href="mailto:jschauma@stevens.edu">jschauma@stevens.edu</a>.
+        </p>
 	<h4>Deliverables and Due Date</H4>
 	<p>You will submit a tar archive of all your files, including a
 	Makefile.  The tar archive will be named "<em>user1-user2-user3</em>.tar",

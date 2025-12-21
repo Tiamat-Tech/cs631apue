@@ -16,6 +16,8 @@ ln -s file2 symlink
 touch -a -t 201810012222 atime
 touch -t 196912010000 longago
 touch -t 300011111111 inthefuture
+echo "I'm not really stdin" > "(stdin)"
+echo "Neither am I" > "-"
 mkdir subdir
 chmod 1755 subdir
 ln -s . subdir/loopdir
@@ -29,20 +31,21 @@ touch " "
 touch "	"
 touch "foobar"
 
-su root -c "chown nobody:operator file"
-su root -c "chown games:daemon d"
-#sudo chown nobody:operator file
-#sudo chown games:daemon d
+#su root -c "chown nobody:operator file"
+#su root -c "chown games:daemon d"
+sudo chown nobody:operator file
+sudo chown games:daemon d
 #su root -c "cp /dev/wd0 ."
+sudo cp /dev/wd0 .
 touch noowner
-su root -c "chown 1234 noowner"
-#sudo chown 1234 noowner
+#su root -c "chown 1234 noowner"
+sudo chown 1234 noowner
 touch nogroup
-su root -c "chown :1234 nogroup"
-#sudo chown :1234 nogroup
+#su root -c "chown :1234 nogroup"
+sudo chown :1234 nogroup
 ln -s / "ls-LR"
-su root -c "cp -a /dev/null null"
-#sudo cp -a /dev/null null
+#su root -c "cp -a /dev/null null"
+sudo cp -a /dev/null null
 touch $(yes a | head -255 | tr -d '\n')
 
 cat >hole.c <<EOF
@@ -89,9 +92,9 @@ EOF
 cc -Wall -Werror hole.c
 ./a.out
 
+(
 mkdir nested
 cd nested
-(
 for i in `jot 512`; do
 	mkdir $i
 	cd $i
@@ -103,5 +106,13 @@ for i in `jot 30`; do
 	mkdir `yes a | head -255 | tr -d '\n'`
 	ln -s a* b
 	cd b
+done
+)
+
+(
+mkdir bigdir
+cd bigdir
+for i in `jot 32766`; do
+	mkdir $i
 done
 )

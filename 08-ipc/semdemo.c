@@ -15,7 +15,7 @@
 
 /* A simple program to illustrate the use of
  * semaphores.  Derived from:
- * https://www.beej.us/guide/bgipc/html/multi/semaphores.html
+ * https://beej.us/guide/bgipc/html/split/semaphores.html
  *
  * Run in parallel in multiple processes to illustrate
  * the blocking as another process holds a lock.

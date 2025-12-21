@@ -1,10 +1,15 @@
 For each assignment, copy this file into your homework
 submission directory and answer all questions.
 
-Did you write all the code myself?
+Did you write all the code yourself?
    - Don't copy and paste code from the internet, your
      classmates, sample solutions, or anywhere else.
      Review https://stevens.netmeister.org/631/#plagiarism
+
+
+If you re-used code you wrote for an earlier
+assignment, did you clearly identify which parts
+re-used?
 
 
 If this assignment allowed the use of AI, did you
@@ -21,22 +26,26 @@ Does your code compile without warnings or errors on a
 NetBSD 10.0 system?
   - Always use *at least* 'cc -Wall -Werror -Wextra',
     possibly
-    'cc -ansi -g -Wall -Werror -Wextra -Wformat=2 -Wjump-misses-init -Wlogical-op -Wpedantic -Wshadow'.
+    'cc -g -Wall -Werror -Wextra -Wformat=2 -Wjump-misses-init -Wlogical-op -Wpedantic -Wshadow'.
 
 
 Did you provide a Makefile?
   - 'make' should use the above CFLAGS and produce an
     executable
+  - use suffix rules to compile individual .c files
 
 
 Did your provide a README to explain any problems or
 issues I encountered?
   - Make sure that your text is well-formatted, plain
     ASCII in proper English.  Use a spell checker.
+  - Break your text at around 80 characters.
 
 
 Did you check the return value of all functions that
 could fail?
+  - Commonly unchecked functions include: malloc(3),
+    gmtime(3), stat(2)
 
 
 Did you send error messages to stderr?  Did you use
