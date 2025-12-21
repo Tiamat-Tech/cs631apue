@@ -1,3 +1,12 @@
+/* This file is part of the sample code and exercises
+ * used by the class "Advanced Programming in the UNIX
+ * Environment" taught by Jan Schaumann
+ * <jschauma@netmeister.org> at Stevens Institute of
+ * Technology.
+ *
+ * https://stevens.netmeister.org/631/
+ */
+
 /*	$NetBSD: udgramsend.c,v 1.3 2003/08/07 10:30:50 agc Exp $
  *
  * Copyright (c) 1986, 1993
@@ -46,20 +55,20 @@
  * line arguments.  The form of the command line is udgramsend pathname
  */
 
-int
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int sock;
 	struct sockaddr_un name;
 
 	if (argc != 2) {
 		perror("usage: send <socket>");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
-	if ((sock = socket(PF_LOCAL, SOCK_DGRAM, 0)) < 0) {
+	sock = socket(PF_LOCAL, SOCK_DGRAM, 0);
+	if (sock < 0) {
 		perror("opening datagram socket");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
 	name.sun_family = PF_LOCAL;
@@ -69,6 +78,6 @@ main(int argc, char **argv)
 	    (struct sockaddr *)&name, sizeof(struct sockaddr_un)) < 0) {
 		perror("sending datagram message");
 	}
-	(void)close(sock);
-	return EXIT_SUCCESS;
+	close(sock);
+	return 0;
 }

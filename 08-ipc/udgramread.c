@@ -1,3 +1,12 @@
+/* This file is part of the sample code and exercises
+ * used by the class "Advanced Programming in the UNIX
+ * Environment" taught by Jan Schaumann
+ * <jschauma@netmeister.org> at Stevens Institute of
+ * Technology.
+ *
+ * https://stevens.netmeister.org/631/
+ */
+
 /*	$NetBSD: udgramread.c,v 1.3 2003/08/07 10:30:50 agc Exp $
  *
  * Copyright (c) 1986, 1993
@@ -61,24 +70,24 @@ int main()
 
 	if ((sock = socket(PF_LOCAL, SOCK_DGRAM, 0)) < 0) {
 		perror("opening datagram socket");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
 	name.sun_family = PF_LOCAL;
 	(void)strncpy(name.sun_path, NAME, sizeof(name.sun_path));
 	if (bind(sock, (struct sockaddr *)&name, sizeof(struct sockaddr_un))) {
 		perror("binding name to datagram socket");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
-	(void)printf("socket --> %s\n", NAME);
+	printf("socket --> %s\n", NAME);
 
 	if (read(sock, buf, BUFSIZ) < 0)
 		perror("reading from socket");
-	(void)printf("--> %s\n", buf);
-	(void)close(sock);
+	printf("--> %s\n", buf);
+	close(sock);
 
 	/* A UNIX domain datagram socket is a 'file'.  If you don't unlink
 	 * it, it will remain in the file system. */
-	(void)unlink(NAME);
-	return EXIT_SUCCESS;
+	unlink(NAME);
+	return 0;
 }

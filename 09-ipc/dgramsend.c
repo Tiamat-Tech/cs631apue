@@ -5,6 +5,10 @@
  * Technology.
  *
  * https://stevens.netmeister.org/631/
+ *
+ * This file is derived from the IPC tutorials
+ * provided by your NetBSD system under
+ * /usr/share/doc/.
  */
 
 /*	$NetBSD: dgramsend.c,v 1.3 2003/08/07 10:30:50 agc Exp $
@@ -41,6 +45,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+
+#include <err.h>
 #include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,8 +62,8 @@
  * portnumber
  */
 
-int main(int argc, char **argv)
-{
+int
+main(int argc, char **argv) {
 	int sock, port;
 	struct sockaddr_in name;
 	struct hostent *hp;
@@ -76,8 +82,8 @@ int main(int argc, char **argv)
 	}
 
 	if ((sock = socket(PF_INET, SOCK_DGRAM, 0)) < 0) {
-		perror("opening datagram socket");
-		exit(EXIT_FAILURE);
+		err(EXIT_FAILURE, "opening datagram socket");
+		/* NOTREACHED */
 	}
 
 	/*
@@ -96,7 +102,8 @@ int main(int argc, char **argv)
 
 	if (sendto(sock, DATA, sizeof(DATA), 0,
 	    (struct sockaddr *)&name, sizeof(name)) < 0) {
-		perror("sending datagram message");
+		err(EXIT_FAILURE, "sending datagram message");
+		/* NOTREACHED */
 	}
 	(void)close(sock);
 	return EXIT_SUCCESS;

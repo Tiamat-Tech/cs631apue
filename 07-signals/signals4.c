@@ -38,9 +38,11 @@
 
 static void
 sig_quit(int signo) {
-	(void)signo;
-	//(void)printf(MSG);
-	(void)write(STDOUT_FILENO, MSG, strlen(MSG));
+	if (signo == SIGQUIT) {
+		(void)printf(MSG);
+	} else if (signo == SIGINT) {
+		(void)write(STDOUT_FILENO, MSG, strlen(MSG));
+	}
 }
 
 int
@@ -51,11 +53,13 @@ main(int argc, char **argv) {
 		err(EXIT_FAILURE, "unable to set SIGQUIT signal handler");
 		/* NOTREACHED */
 	}
+	if (signal(SIGINT, sig_quit) == SIG_ERR) {
+		err(EXIT_FAILURE, "unable to set SIGINT signal handler");
+		/* NOTREACHED */
+	}
 
 	(void)printf("=> Waiting for a signal...");
-	if (argc > 1) {
-		pause();
-	}
+	pause();
 
 	(void)printf(" done.\n");
 	exit(EXIT_SUCCESS);

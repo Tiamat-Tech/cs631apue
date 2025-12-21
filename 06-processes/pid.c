@@ -14,7 +14,8 @@
  */
 
 /*
- * This trivial program simply prints out its own PID and exits.
+ * Version 2 of lecture 01's pid program, now with a
+ * parent pid - woohoo!
  */
 
 #include <stdio.h>
@@ -23,6 +24,7 @@
 
 int
 main() {
-	printf("Our process id is %d.\n", getpid());
-	return(EXIT_SUCCESS);
+	(void)printf("My process id is %d.\n", getpid());
+	(void)printf("My parent's process id is %d.\n", getppid());
+	return EXIT_SUCCESS;
 }

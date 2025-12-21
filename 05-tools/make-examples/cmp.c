@@ -197,3 +197,13 @@ revsizecmp(const FTSENT *a, const FTSENT *b)
 	else
 		return (revnamecmp(a, b));
 }
+
+#if 0
+int
+sillysort(const FTSENT *a, const FTSENT *b)
+{
+	(void)a; (void)b;
+	int n[3] = { -1, 0, 1 };
+	return n[((long)&n)%3];
+}
+#endif

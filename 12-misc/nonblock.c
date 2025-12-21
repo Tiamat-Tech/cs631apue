@@ -14,11 +14,13 @@
  */
 
 /*
- * This program uses nonblocking I/O to write 50 megabytes of data to
- * its standard output, reporting on standard error the number of bytes
- * written by each system call.  If standard output is a pipe or network,
- * connection, we may observe that some write system calls "fail", because
- * buffers are full, or flow-control has been applied; this is normal.
+ * This program uses nonblocking I/O to write 50
+ * megabytes of data to its standard output, reporting
+ * on standard error the number of bytes written by
+ * each system call.  If standard output is a pipe or
+ * network, connection, we may observe that some write
+ * system calls "fail", because buffers are full, or
+ * flow-control has been applied; this is normal.
  */
 
 #include <errno.h>

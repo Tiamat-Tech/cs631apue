@@ -14,7 +14,7 @@
  */
 
 /* This program illustrates the previously default
- * behavior or signal handlers: each invocation reset
+ * behavior or signal handlers: each invocation resets
  * the disposition to SIG_DFL.
  *
  * Hit ^\ and we jump into sig_quit_reset, which

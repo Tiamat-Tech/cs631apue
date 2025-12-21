@@ -53,7 +53,6 @@ main() {
 		exit(EXIT_FAILURE);
 		/* NOTREACHED */
 	}
-
 	(void)fprintf(stderr, "Error messages back to normal.\n");
 
 	(void)close(fd);

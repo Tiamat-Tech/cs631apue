@@ -13,15 +13,18 @@
  * https://stevens.netmeister.org/631/
  */
 
-/* This program illustrates the use of flock(2).  Run two concurrent
- * processes to show how a shared lock can be applied by both, but only
- * one process can upgrade to an exclusive lock.
+/* This program illustrates the use of flock(2).  Run
+ * two concurrent processes to show how a shared lock
+ * can be applied by both, but only one process can
+ * upgrade to an exclusive lock.
  *
- * Illustrate blocking and non-blocking modes: in blocking mode, we
- * are avoiding the danger of a deadlock by the fact that upgrading a read
- * lock releases that lock, allowing the second process to eventually get
- * the exlusive lock.  In non-blocking mode, we avoid a deadlock by
- * explicitly releasing all locks and aborting after 10 tries.
+ * Illustrate blocking and non-blocking modes: in
+ * blocking mode, we are avoiding the danger of a
+ * deadlock by the fact that upgrading a read lock
+ * releases that lock, allowing the second process to
+ * eventually get the exlusive lock.  In non-blocking
+ * mode, we avoid a deadlock by explicitly releasing
+ * all locks and aborting after 10 tries.
  */
 #include <sys/file.h>
 
